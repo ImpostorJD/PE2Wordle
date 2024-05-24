@@ -23,7 +23,7 @@ function App() {
 
 
   return (
-    <div className="flex flex-col gap-5 w-[100vw] h-[100vh] bg-slate-900">
+    <div className="flex flex-col gap-5 w-[100vw] bg-slate-900 p-2">
         <div className='text-uppercase w-full flex bg-clip-text justify-center p-2 text-transparent bg-gradient-to-br from-blue-400  to-green-200 text-[2rem] font-bold border-b-white border-b-[2px] h-fit'>
           GUESS THE WORD
         </div>
