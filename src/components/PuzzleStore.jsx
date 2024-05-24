@@ -6,17 +6,17 @@ import GuessTable from "./GuessTable";
 import Keyboard from './Keyboard';
 
 
-export default function PuzzleStore({itemNo}) {
+export default function PuzzleStore({itemNo, setGuessed, currentGuess, setCurrentGuess}) {
     
     const [word, setWord] = useState('');
     const [guesses, setGuesses] = useState(['','','','','','']);
-    const [currentGuess, setCurrentGuess] = useState(0);
 
     const guessLimit = 6;
     
     useEffect(() => {
         setWord(words[itemNo]);
-      
+        setGuesses(['','','','','','']);
+        setCurrentGuess(0);   
     }, [itemNo]);
 
     useEffect(() => {
@@ -28,14 +28,18 @@ export default function PuzzleStore({itemNo}) {
     }, [word, guesses, currentGuess]);
 
 
-    function submitGuess () {
+    function submitGuess() {
         if (guesses[currentGuess].length === word.length) {
+            if(guesses[currentGuess] === word)
+                setGuessed(true);
             setCurrentGuess(currentGuess + 1);
         }
        
     }
 
     function won() {
+        if(guesses[currentGuess - 1] === word)
+            setGuessed(true);
         return guesses[currentGuess - 1] === word
     }
 
