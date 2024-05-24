@@ -23,11 +23,11 @@ function App() {
 
 
   return (
-    <div className="flex flex-col gap-5 w-[100vw] h-[100vh] bg-slate-900">
-        <div className='text-uppercase w-full flex bg-clip-text justify-center p-2 text-transparent bg-gradient-to-br from-blue-400  to-green-200 text-[2rem] font-bold border-b-white border-b-[2px] h-fit'>
+    <div className="flex flex-col gap-5 w-[100vw] min-h-[100vh] bg-slate-900">
+        <div className='text-uppercase w-full flex bg-clip-text justify-center p-2 text-transparent bg-gradient-to-br from-blue-400 to-green-200 text-[2rem] font-bold border-b-white border-b-[2px] h-fit'>
           GUESS THE WORD
         </div>
-        <div className='flex flex-col gap-3 flex-auto'>
+        <div className='flex flex-col gap-2 flex-auto'>
          {
            !startGame ? 
             <div className='flex flex-col gap-2 justify-center items-center h-full w-full p-2'>
@@ -38,7 +38,7 @@ function App() {
               </div>
             </div>
             :
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-2 p-2'>
               <div className='flex justify-center text-white'>
                 <span className='font-bold me-2'>Stage Level: </span> { level + 1 }/5  
               </div>
