@@ -32,7 +32,7 @@ function App() {
            !startGame ? 
             <div className='flex flex-col gap-2 justify-center items-center h-full w-full p-2'>
               <div className='flex items-end w-full h-full justify-center'>
-                <button className='bg-gradient-to-b from-blue-400 to-green-500 rounded-sm text-slate-800 px-4 py-2 text-[1.66rem]' onClick={()=>setGame(true)}>
+                <button className='bg-gradient-to-b from-blue-400 to-green-500 rounded-sm text-slate-800 px-4 py-2 text-[1.66rem]' onClick={() => setGame(true)}>
                       Start Game
                 </button>
               </div>
@@ -40,17 +40,17 @@ function App() {
             :
             <div className='flex flex-col gap-2 p-2'>
               <div className='flex justify-center text-white'>
-                <span className='font-bold me-2'>Stage Level: </span> { level + 1 }/5  
+                <span className='font-bold me-2'>Stage Level: </span> { level + 1 }/3
               </div>
               <PuzzleStore itemNo={level} setGuessed={setGuessed} currentGuess={currentGuess} setCurrentGuess={setCurrentGuess}/>
               {
-                guessed && level < 5 &&
+                guessed && level < 3 &&
                 <div className='flex items-end w-full h-full justify-center'>
 
                   <button className='bg-gradient-to-b from-blue-400 to-green-500 rounded-sm text-slate-800 px-4 py-2 text-[1.66rem]' onClick={() => {
                       let levelCurrent = JSON.parse(localStorage.getItem('level'))
 
-                      if(levelCurrent < 5){
+                      if(levelCurrent < 3){
                         levelCurrent++;
                         setLevel(levelCurrent);
                         localStorage.setItem('level', levelCurrent);
